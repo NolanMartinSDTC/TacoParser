@@ -14,11 +14,7 @@ namespace LoggingKata
         {
             logger.LogInfo("Log initialized");
             var lines = File.ReadAllLines(csvPath);
-            foreach (var line in lines)
-            {
-                logger.LogInfo($"Line: {line}");
-
-            }
+            logger.LogInfo($"Sample Line: {lines[0]}");
             logger.LogInfo("Begin Parsing...");
             var parser = new TacoParser();
             var locations = lines.Select(parser.Parse).ToArray();
